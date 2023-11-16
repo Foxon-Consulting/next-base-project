@@ -68,8 +68,10 @@ jobs:
     needs:
       - build
     steps:
+      - name: install
+        run: npm ci
       - name: test
-        run: npm ci; then npm run test; fi
+        run: npm run test
 
   releasing:
     runs-on: ubuntu-latest
