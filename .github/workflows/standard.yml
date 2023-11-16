@@ -1,5 +1,8 @@
 name: integration
 
+env:
+  NODE_VERSION: 18.18.2
+
 on:
   pull_request:
     branches:
@@ -42,7 +45,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "18.18.2"
+          node-version: "${{ env.NODE_VERSION }}"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Restore cache
         uses: actions/cache@v3
@@ -72,7 +75,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "18.18.2"
+          node-version: "${{ env.NODE_VERSION }}"
       - name: install
         run: npm ci
       - name: test
