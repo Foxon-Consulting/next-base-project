@@ -1,8 +1,5 @@
 name: integration
 
-env:
-  NODE_VERSION: "18.18.2"
-
 on:
   pull_request:
     branches:
@@ -10,6 +7,10 @@ on:
   push:
     branches:
       - "**"
+
+env:
+  NODE_VERSION: 18.18.2
+
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
