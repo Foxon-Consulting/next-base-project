@@ -8,8 +8,8 @@ on:
     branches:
       - "**"
 
-env:
-  NODE_VERSION: 18.18.2
+# env:
+#   NODE_VERSION: 18.18.2
 
 jobs:
   pre-commit:
@@ -21,7 +21,7 @@ jobs:
   integration:
     uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_integration.yml@feat-nextjs-workflow
     with:
-      node-version: "${{ env.NODE_VERSION }}"
+      node-version: "18.18.2"
       # node-version: "18.18.2"
 
   # build:
