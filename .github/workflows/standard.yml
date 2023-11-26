@@ -1,7 +1,7 @@
 name: integration
 
 env:
-  NODE_VERSION: 18.18.2
+  NODE_VERSION: "18.18.2"
 
 on:
   pull_request:
@@ -20,8 +20,8 @@ jobs:
   integration:
     uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_integration.yml@feat-nextjs-workflow
     with:
-      # node-version: "${{ env.NODE_VERSION }}"
-      node-version: "18.18.2"
+      node-version: ${{ env.NODE_VERSION }}
+      # node-version: "18.18.2"
 
   # build:
   #   runs-on: ubuntu-latest
