@@ -14,7 +14,8 @@ on:
       - "**"
   release:
     branches:
-      - main
+      # - main
+      - "**"
     types:
       - created
 
@@ -97,13 +98,26 @@ jobs:
       # Tag image with git sha if not a tag, with the tag if it is a tag
       - name: Tag image
         run: |
-          if [ -z "$GITHUB_REF_NAME" ]; then
-            docker tag next-deploy-img:temp lizzieb1416/next-deploy-img:${GITHUB_REF_NAME}
-            docker push lizzieb1416/next-deploy-img:${GITHUB_REF_NAME}
-          else
-            docker tag next-deploy-img:temp lizzieb1416/next-deploy-img:${GITHUB_SHA}
-            docker push lizzieb1416/next-deploy-img:${GITHUB_SHA}
-          fi
+          echo $GITHUB_REF_NAME
+          echo $GITHUB_REF
+          echo $GITHUB_SHA
+          echo $GITHUB_TAG
+          echo $GITHUB_REF_TYPE
+          echo $GITHUB_HEAD_REF
+
+          docker tag next-deploy-img:temp lizzieb1416/next-deploy-img:${GITHUB_REF}
+          docker push lizzieb1416/next-deploy-img:${GITHUB_REF}
+
+
+
+
+          # if [ -z "$GITHUB_REF_NAME" ]; then
+          #   docker tag next-deploy-img:temp lizzieb1416/next-deploy-img:${GITHUB_REF_NAME}
+          #   docker push lizzieb1416/next-deploy-img:${GITHUB_REF_NAME}
+          # else
+          #   docker tag next-deploy-img:temp lizzieb1416/next-deploy-img:${GITHUB_SHA}
+          #   docker push lizzieb1416/next-deploy-img:${GITHUB_SHA}
+          # fi
 
   # releasing:
   #   runs-on: ubuntu-latest
