@@ -10,11 +10,12 @@ on:
   push:
     branches:
       - "**"
-  tags:
-    - "**"
+  tag:
+    branches:
+      - main
   release:
-    types:
-      - created
+    branches:
+      - main
 
 jobs:
   # pre-commit:
