@@ -1,4 +1,4 @@
-FROM node-toolkit:1.0.0 as builder
+FROM lizzieb1416/node-image:1.0.0:1.0.0 as builder
 
 WORKDIR /app
 COPY . .
