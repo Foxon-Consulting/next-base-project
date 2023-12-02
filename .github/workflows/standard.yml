@@ -98,7 +98,7 @@ jobs:
       # Tag image with git sha if not a tag, with the tag if it is a tag
       - name: Tag image
         run: |
-          if github.ref_type == 'tag'
+          if [ $GITHUB_REF_TYPE == 'tag' ]; then
             docker tag next-deploy-img:temp lizzieb1416/next-deploy-img:${GITHUB_REF_NAME}
             docker push lizzieb1416/next-deploy-img:${GITHUB_REF_NAME}
           else
