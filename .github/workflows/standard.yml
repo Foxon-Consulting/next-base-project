@@ -10,7 +10,7 @@ on:
   push:
     branches:
       - "**"
-  tag:
+  tags:
     branches:
       - main
   release:
