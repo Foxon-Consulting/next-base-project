@@ -33,11 +33,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      # - name: Login to Docker Hub
+      #   uses: docker/login-action@v3
+      #   with:
+      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
+      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Build
@@ -76,10 +76,17 @@ jobs:
         with:
           name: next-deploy-img
           path: /tmp
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Load image
         run: |
           docker load --input /tmp/next-deploy-img.tar
+          docker tag next-deploy-img:1.0.0 lizzieb1416/next-deploy-img:1.0.0
           docker image ls -a
+          docker push lizzieb1416/next-deploy-img:1.0.0
 
   # releasing:
   #   runs-on: ubuntu-latest
