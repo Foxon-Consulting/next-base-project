@@ -10,9 +10,6 @@ on:
   push:
     branches:
       - "**"
-  tags:
-    branches:
-      - main
   release:
     branches:
       - main
