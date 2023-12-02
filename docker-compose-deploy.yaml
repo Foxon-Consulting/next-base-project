@@ -1,0 +1,13 @@
+# simulates deployment by k8s
+version: "3"
+
+services:
+  nextjs-app-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    container_name: nextjs-app-server_cn
+    restart: unless-stopped
+    stdin_open: true
