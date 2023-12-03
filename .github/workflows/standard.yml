@@ -64,7 +64,7 @@ jobs:
         run: |
           cd /tmp/artifact
           zip -r next-base-project.zip *
-          aws s3 sync ./tmp/artifact/next-base-project.zip s3://foxon-consulting-test/next-base-project.zip
+          aws s3 sync next-base-project.zip s3://foxon-consulting-test/next-base-project.zip
 
     # steps:
     #   - name: Checkout
