@@ -4,7 +4,7 @@ services:
   node-toolkit:
     image: node-toolkit:1.0.0
     ports:
-      - "2222:22"
+      # - "2224:22"
       - "3000:3000"
     volumes:
       - ./:/home/user/next-app

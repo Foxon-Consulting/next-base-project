@@ -53,7 +53,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: next-base-project-artifact
-          path: /tmp
+          path: /tmp/next-base-project-artifact.zip
       - name: Setup AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -63,7 +63,7 @@ jobs:
       - name: Push to S3 bucket
         run: |
           ls -la /tmp/
-          aws s3 sync /tmp/ s3://foxon-consulting-test/website-test
+          aws s3 sync /tmp/next-base-project-artifact.zip s3://foxon-consulting-test/website-test
 
     # steps:
     #   - name: Checkout
