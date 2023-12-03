@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: next-base-project-artifact
-          path: ./out
+          path: ./out/
 
   deliver:
     runs-on: ubuntu-latest
@@ -62,7 +62,8 @@ jobs:
           aws-region: us-west-1
       - name: Push to S3 bucket
         run: |
-          aws s3 sync /tmp/next-base-project-artifact s3://foxon-consulting-test/website-test
+          ls -la /tmp/
+          # aws s3 sync /tmp/next-base-project-artifact s3://foxon-consulting-test/website-test
 
     # steps:
     #   - name: Checkout
