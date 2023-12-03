@@ -66,7 +66,8 @@ jobs:
           zip -r next-base-project.zip *
       - name: Push to S3 bucket
         run: |
-          aws s3 sync ./tmp/artifact/next-base-project.zip s3://foxon-consulting-test/next-base-project.zip
+          ls -la
+          aws s3 sync /tmp/artifact/next-base-project.zip s3://foxon-consulting-test/next-base-project.zip
 
     # steps:
     #   - name: Checkout
