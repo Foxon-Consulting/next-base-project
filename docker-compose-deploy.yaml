@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:80"
+      - "3010:80"
     container_name: nextjs-app-server_cn
     restart: unless-stopped
     stdin_open: true
