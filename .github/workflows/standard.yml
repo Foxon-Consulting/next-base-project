@@ -53,7 +53,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: next-base-project-artifact
-          path: /artifact
+          path: /tmp/artifact
       - name: Setup AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -62,7 +62,7 @@ jobs:
           aws-region: us-west-1
       - name: Push to S3 bucket
         run: |
-          cd /artifact
+          cd /tmp/artifact
           zip -r next-base-project.zip *
           aws s3 sync ./next-base-project.zip s3://foxon-consulting-test/next-base-project.zip
 
