@@ -60,11 +60,13 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-1
-      - name: Push to S3 bucket
+      - name: Zip artifact
         run: |
           cd /tmp/artifact
           zip -r next-base-project.zip *
-          aws s3 sync ./next-base-project.zip s3://foxon-consulting-test/next-base-project.zip
+      - name: Push to S3 bucket
+        run: |
+          aws s3 sync ./tmp/artifact/next-base-project.zip s3://foxon-consulting-test/next-base-project.zip
 
     # steps:
     #   - name: Checkout
