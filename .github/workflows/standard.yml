@@ -63,7 +63,7 @@ jobs:
       - name: Push to S3 bucket
         run: |
           ls -la /tmp/
-          aws s3 sync /tmp/next-base-project-artifact.zip s3://foxon-consulting-test/website-test/next-base-project-artifact.zip
+          aws s3 sync /tmp/next-base-project-artifact.zip s3://foxon-consulting-test/next-base-project-artifact.zip
 
     # steps:
     #   - name: Checkout
