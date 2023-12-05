@@ -129,12 +129,12 @@ jobs:
       pull-requests: write
     uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_delivery.yml@feat-nextjs-workflow
 
-  deployment:
-    needs:
-      - releasing
-      - delivery
-    if: github.ref == 'refs/heads/dev'
-    permissions:
-      contents: write
-      pull-requests: write
-    uses: Foxon-Consulting/github-actions/.github/workflows/simple_deployment.yml@main
+  # deployment:
+  #   needs:
+  #     - releasing
+  #     - delivery
+  #   if: github.ref == 'refs/heads/dev'
+  #   permissions:
+  #     contents: write
+  #     pull-requests: write
+  #   uses: Foxon-Consulting/github-actions/.github/workflows/simple_deployment.yml@main
