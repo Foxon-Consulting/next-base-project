@@ -132,8 +132,8 @@ jobs:
       pull-requests: write
     uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_delivery.yml@feat-nextjs-workflow
     with:
-      username: ${{ secrets.DOCKERHUB_USERNAME }}
-      password: ${{ secrets.DOCKERHUB_TOKEN }}
+      docker-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      docker-password: ${{ secrets.DOCKERHUB_TOKEN }}
 
   # deployment:
   #   needs:
