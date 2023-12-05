@@ -103,20 +103,20 @@ jobs:
   #           docker push lizzieb1416/next-deploy-img:${GITHUB_SHA}
   #         fi
 
-  releasing:
-    runs-on: ubuntu-latest
-    needs:
-      - pre-commit
-      - integration
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: releasing
-        uses: Foxon-Consulting/github-actions/delivery/common/release-please@main
+  # releasing:
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - pre-commit
+  #     - integration
+  #   if: github.ref == 'refs/heads/main'
+  #   steps:
+  #     - name: releasing
+  #       uses: Foxon-Consulting/github-actions/delivery/common/release-please@main
 
   delivery:
-    needs:
-      - releasing
-    if: github.ref == 'refs/heads/main'
+    # needs:
+    #   - releasing
+    # if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
       pull-requests: write
