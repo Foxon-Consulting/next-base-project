@@ -13,6 +13,10 @@ on:
     types:
       - created
 
+env:
+  ARTIFACT_NAME: "nextjs-app-artifact"
+  DEPLOY_IMAGE_NAME: "next-deploy-img"
+
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
@@ -23,8 +27,8 @@ jobs:
   integration:
     uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_integration.yml@feat-nextjs-workflow
     with: # passing this as inputs to
-      artifact-name: "nextjs-app-artifact"
-      deploy-image-name: "next-deploy-img"
+      artifact-name: ${{ env.ARTIFACT_NAME }}
+      deploy-image-name: ${{ env.DEPLOY_IMAGE_NAME }}
 
   # releasing:
   #   runs-on: ubuntu-latest
@@ -45,7 +49,7 @@ jobs:
       pull-requests: write
     uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_delivery.yml@feat-nextjs-workflow
     with:
-      deploy-image-name: "next-deploy-img"
+      deploy-image-name: ${{ env.DEPLOY_IMAGE_NAME }}
     secrets:
       docker-username: ${{ secrets.DOCKERHUB_USERNAME }}
       docker-password: ${{ secrets.DOCKERHUB_TOKEN }}
