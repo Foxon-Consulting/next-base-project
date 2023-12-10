@@ -14,8 +14,8 @@ on:
       - created
 
 env:
-  ARTIFACT_NAME: "nextjs-app-artifact"
-  DEPLOY_IMAGE_NAME: "next-deploy-img"
+  ARTIFACT_NAME: nextjs-app-artifact
+  DEPLOY_IMAGE_NAME: next-deploy-img
 
 jobs:
   pre-commit:
