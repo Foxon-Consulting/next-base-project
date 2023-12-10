@@ -18,6 +18,10 @@ env:
   DEPLOY_IMAGE_NAME: "next-deploy-img"
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    run: echo "HERE!! $ARTIFACT_NAME"
+
   pre-commit:
     runs-on: ubuntu-latest
     steps:
@@ -28,8 +32,7 @@ jobs:
     uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_integration.yml@feat-nextjs-workflow
     with: # passing this as inputs to
       artifact-name: $ARTIFACT_NAME
-      deploy-image-name: $.DEPLOY_IMAGE_NAME
-    run: echo "HERE!!!! $ARTIFACT_NAME"
+      deploy-image-name: $DEPLOY_IMAGE_NAME
 
   # releasing:
   #   runs-on: ubuntu-latest
@@ -43,7 +46,7 @@ jobs:
 
   delivery:
     needs:
-      # - releasing
+      # - releasingg
       - integration
     permissions:
       contents: write
