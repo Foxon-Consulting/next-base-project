@@ -22,7 +22,7 @@ jobs:
 
   integration:
     uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_integration.yml@feat-nextjs-workflow
-    inputs:
+    with:
       artifact-name: "nextjs-app"
 
   # releasing:
