@@ -47,7 +47,7 @@ jobs:
 
   deployment:
     needs:
-      - releasing
+      # - releasing
       # - delivery
     if: github.ref == 'refs/heads/dev'
     permissions:
