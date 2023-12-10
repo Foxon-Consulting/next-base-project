@@ -20,7 +20,9 @@ env:
 jobs:
   test:
     runs-on: ubuntu-latest
-    run: echo "HERE!! $ARTIFACT_NAME"
+    steps:
+      - name: test
+        run: echo "HERE!! $ARTIFACT_NAME"
 
   pre-commit:
     runs-on: ubuntu-latest
