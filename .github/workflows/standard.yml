@@ -27,7 +27,7 @@ jobs:
   #   uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_integration.yml@feat-nextjs-workflow
   build:
     runs-on: ubuntu-latest
-    container: foxonconsulting/node-image:1.0.0 ## GHANGER
+    container: lizzieb1416/node-image:1.0.0 ## GHANGER
     steps:
       - name: Checkout
         uses: actions/checkout@v3
