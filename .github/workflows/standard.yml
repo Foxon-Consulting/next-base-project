@@ -23,7 +23,8 @@ jobs:
   integration:
     uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_integration.yml@feat-nextjs-workflow
     with:
-      artifact-name: "nextjs-app"
+      artifact-name: "nextjs-app-artifact"
+      deploy-image-name: "nextjs-deploy-img"
 
   # releasing:
   #   runs-on: ubuntu-latest
