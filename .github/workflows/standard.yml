@@ -21,7 +21,7 @@ jobs:
         uses: Foxon-Consulting/github-actions/integration/common/pre-commit@main
 
   integration:
-    uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_integration.yml@feat-nextjs-workflow
+    uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_integration.yml
     with: # passing this as inputs to
       artifact-name: "nextjs-app-artifact"
       deploy-image-name: "next-deploy-img"
@@ -43,7 +43,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_delivery.yml@feat-nextjs-workflow
+    uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_delivery.yml@main
     with:
       deploy-image-name: "next-deploy-img"
     secrets:
