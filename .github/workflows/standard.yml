@@ -16,7 +16,7 @@ jobs:
         uses: Foxon-Consulting/github-actions/integration/common/pre-commit@main
 
   integration:
-    uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_integration.yml@feat-nextjs-workflow
+    uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_integration.yml@feat-nextjs-workflow@main
     with:
       node-version: "18.18.2"
 
