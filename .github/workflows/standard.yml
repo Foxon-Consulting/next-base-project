@@ -43,7 +43,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_delivery.yml@feature/next-delivery
+    uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_delivery.yml@main
     secrets: inherit
     with:
       deploy-image-name: "next-deploy-img"
