@@ -40,15 +40,14 @@ jobs:
     needs:
       # - releasingg
       - integration
+    if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
       pull-requests: write
     uses: Foxon-Consulting/github-actions/.github/workflows/nextjs_delivery.yml@main
+    secrets: inherit
     with:
       deploy-image-name: "next-deploy-img"
-    secrets:
-      docker-username: ${{ secrets.DOCKERHUB_USERNAME }}
-      docker-password: ${{ secrets.DOCKERHUB_TOKEN }}
 
   deployment:
     needs:
