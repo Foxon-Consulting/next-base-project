@@ -40,6 +40,7 @@ jobs:
     needs:
       # - releasingg
       - integration
+    if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
       pull-requests: write
